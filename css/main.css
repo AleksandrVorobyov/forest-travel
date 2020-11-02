@@ -7,14 +7,10 @@ body {
   color: #31405b;
 }
 .container {
-  width: 1170px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
-.container::after {
-  content: "";
-  display: table;
-  clear: both;
+  padding: 0 15px;
 }
 .row::after {
   content: "";
@@ -91,9 +87,12 @@ body {
   padding-top: 50px;
   color: #fff;
 }
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .logo {
-  float: left;
-  width: 270px;
   font-family: "Lobster", cursive;
   font-size: 40px;
   color: #fff;
@@ -103,12 +102,8 @@ body {
   text-decoration: none;
 }
 .navigation {
-  text-align: right;
-  float: right;
-  width: 870px;
   font-size: 22px;
   color: #fff;
-  padding-top: 15px;
 }
 .navigation-link {
   display: inline-block;
@@ -124,7 +119,7 @@ body {
 }
 .header-content {
   position: absolute;
-  width: 1170px;
+  max-width: 1170px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -220,6 +215,7 @@ body {
   float: left;
   width: 270px;
   padding-top: 6px;
+  margin-bottom: 30px;
 }
 .navigation-stack h3 {
   display: block;
@@ -261,7 +257,7 @@ body {
 }
 .text-stack-block {
   float: right;
-  width: 770px;
+  max-width: 770px;
 }
 .text-stack-block h2 {
   display: block;
@@ -288,6 +284,7 @@ body {
   clear: both;
 }
 .stack-img {
+  width: 100%;
   display: block;
   margin-bottom: 35px;
 }
@@ -315,10 +312,14 @@ body {
   clear: both;
 }
 .content-discription {
-  width: 470px;
+  max-width: 470px;
 }
 .content-img {
-  width: 570px;
+  max-width: 570px;
+}
+.content-img img{
+  width: 100%;
+  object-fit: cover;
 }
 
 .content-title {
@@ -343,18 +344,19 @@ body {
 
 /* ---------------------section content inner-------------------- */
 .section-content-inner {
+  display: flow-root;
   padding-top: 60px;
   padding-bottom: 120px;
 }
 /* -------------------contacts----------------- */
 .contacts-address {
   float: left;
-  width: 470px;
+  max-width: 470px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 .contacts-form {
   float: right;
-  width: 630px;
 }
 .contacts-list {
   font-size: 20px;
@@ -541,18 +543,16 @@ body {
   background-color: #265847;
   color: white;
 }
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .footer-left {
-  width: 270px;
-  float: left;
+  max-width: 270px;
 }
 .footer-right {
   max-width: 870px;
-  float: right;
-}
-.footer-right::after {
-  display: table;
-  content: "";
-  clear: both;
 }
 .footer-logo {
   font-family: "Lobster", cursive;
@@ -601,3 +601,88 @@ body {
 .footer-list-link:hover {
   text-decoration: underline;
 }
+
+
+@media (max-width: 1080px) {
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .navigation-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-bottom: 30px;
+  }
+
+  .header-content {
+    position: absolute;
+    max-width: 1170px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+  }
+
+  .content-discription {
+    margin-bottom: 40px;
+  }
+
+  .footer__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-col {
+    font-size: 18px;
+    float: left;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+.header-title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 45px;
+  font-weight: 700;
+}
+}
+
+@media (max-width: 1180px) {
+  .tours-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .mb30 {
+    margin-bottom: 30px;
+  }
+  }
